@@ -1,7 +1,24 @@
+import styles from './Description.module.sass';
+import Image from 'next/image';
+
+const blurDataURL = 'data:image/webp;base64,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'
+
 export const Description = () => {
-    return (
-        <section>
-            <h1>Descripcion</h1>
-        </section>
-    )
+  return (
+    <section className={styles.Description}>
+      <div className={styles.Description__imageContainer}>
+        <Image 
+          src="/images/description.jpeg" 
+          alt="products marketplace" 
+          fill
+          placeholder='blur'
+          blurDataURL={blurDataURL}
+        />
+      </div>
+      <div className={styles.Description__text}>
+        <h2>Bring the future today</h2>
+        <p>Future World: Your Gateway to Tomorrow's Tech! Dive into a world of cutting-edge gadgets and gear. Stay ahead of the curve and redefine your digital lifestyle with us.</p>
+      </div>
+    </section>
+  )
 }
