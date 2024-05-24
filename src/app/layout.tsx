@@ -4,6 +4,8 @@ import {Roboto} from "next/font/google"
 import { Header } from "app/components/shared/Header";
 import { Footer } from "app/components/shared/Footer";
 import "app/sass/globals.sass"
+import { Hero } from "app/components/Home/Hero";
+import { Description } from "app/components/Home/Description";
 
 const roboto = Roboto({
   weight: ["100", "300", "500", "700"],
@@ -25,6 +27,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         <Header />
+        <Hero />
+        <Description />
         {children}
         <Footer />
       </body>
