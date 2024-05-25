@@ -1,0 +1,34 @@
+.ErrorContainer
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    text-align: center
+
+    h1, p
+        background: linear-gradient(270deg, #4f56ff, #ff4980)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        background-clip: text
+        text-fill-color: transparent
+
+    h1
+        font-size: 5rem // Tamaño grande para el emoticono
+        margin-bottom: 1rem // Espacio debajo del h1
+
+    p
+        font-size: 1.5rem // Tamaño del texto del párrafo
+        margin-bottom: 2rem // Espacio debajo del párrafo
+
+    button
+        padding: 0.5rem 2rem // Espaciado interno del botón
+        font-size: 1rem // Tamaño del texto del botón
+        cursor: pointer // Cambia el cursor al pasar sobre el botón
+        background-color: #ea00ff // Color de fondo del botón
+        color: #fff // Color del texto del botón
+        border: none // Sin borde
+        border-radius: 1rem // Bordes ligeramente redondeados
+        transition: background-color 0.4s // Suave transición de color
+
+        &:hover
+            background-color: #8c00e9 // Color de fondo al pasar el ratón
