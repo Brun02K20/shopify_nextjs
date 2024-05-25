@@ -1,3 +1,6 @@
+import { ProductsWrapper } from "app/components/Store/ProductsWrapper";
+import { getProducts } from "app/services/shopify";
+
 // como esoy usando Typescript, debo declarar las propiedades que reciba mi componente
 interface CategoryProps {
     params: {
@@ -8,9 +11,9 @@ interface CategoryProps {
     };
 }
 
-export default function Category(props: CategoryProps) {
-    const {categories} = props.params
+export default async function Category(props: CategoryProps) {
+    const products = await getProducts()
     return (
-        <h1>Categoria: {categories}</h1>
+        <ProductsWrapper products={products} />
     )
 }
