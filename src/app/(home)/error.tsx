@@ -1,9 +1,6 @@
 "use client"
-import styles from "./error.module.sass"
+import styles from "app/sass/error.module.sass"
 import { useEffect } from "react"
-
-
-
 
 // para reintentar la peticion en caso de que ocurra un error y se renderice esto
 interface ErrorProps {
