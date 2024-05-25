@@ -1,12 +1,28 @@
-export default function Layout({children}: {children: React.ReactNode}) {
-    return (
-        <main>
-            <nav>
-                Category Navigation: 
-            </nav>
-            {children} 
-        </main>
-    )
+import { getCollections } from "app/services/shopify/collections"
+import Link from "next/link"
+import styles from './StoreLayout.module.sass'
+
+export default async function Layout({ children }: { children: React.ReactNode }) {
+  const collections = await getCollections()
+
+  return (
+    <main className={styles.StoreLayout}>
+      <h1>Explore</h1>
+      <nav>
+        <ul className={styles.StoreLayout__list}>
+          {
+            collections.map((collection) => (
+              <Link key={collection.id} href={'/store/' + collection.handle} className={styles.StoreLayout__chip}>
+                {collection.title}
+              </Link>
+            ))
+          }
+        </ul>
+      </nav>
+      {children}
+    </main>
+  )
 }
+
 // siempre debo reornar children porque represena el contenido del layout de la pagina, onda, lo que esta dentro
 // de ese layout
